@@ -33,7 +33,6 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.10.0",
     "husky": "^0.14.3",
-    "lerna": "^2.9.0",
     "lint-staged": "^7.2.0",
     "marlint": "^6.5.4",
     "prettier": "^1.13.7"
