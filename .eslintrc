@@ -1,6 +1,5 @@
 {
-  "extends": ["marlint", "plugin:flowtype/recommended"],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "radix": [2, "as-needed"],
     "no-nested-ternary": 1,
@@ -9,15 +8,12 @@
     "react/forbid-prop-types": 1,
     "import/no-unresolved": [2, { "ignore": ["^react$", "^react-native$", "^redux$", "^@storybook/"] }]
   },
-  "plugins": ["import", "eslint-plugin-flowtype"],
+  "plugins": ["import"],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".android.js", ".ios.js", ".web.js"]
+        "extensions": [".ts", ".tsx", ".js", ".android.js", ".ios.js", ".web.js"]
       }
-    },
-    "flowtype": {
-      "onlyFilesWithFlowAnnotation": true
     }
   },
   "globals": {

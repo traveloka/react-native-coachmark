@@ -26,6 +26,8 @@
     }
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
     "@types/react": "17.0.2",
     "@types/react-native": "^0.63.50",
     "babel-eslint": "^8.2.5",
