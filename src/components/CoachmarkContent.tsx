@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-export default class CoachmarkContent extends Component {
+interface CoachmarkContentProps {
+  message: string;
+  buttonText?: string;
+}
+export default class CoachmarkContent extends Component<CoachmarkContentProps> {
+  static defaultProps: Pick<CoachmarkContentProps, 'buttonText'> = {
+    buttonText: 'OK'
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -9,7 +16,7 @@ export default class CoachmarkContent extends Component {
           <Text style={styles.messageText}>{this.props.message}</Text>
         </View>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>OK</Text>
+          <Text style={styles.buttonText}>{this.props.buttonText}</Text>
         </View>
       </View>
     );
