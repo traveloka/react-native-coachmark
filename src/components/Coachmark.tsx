@@ -133,14 +133,14 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
           left: 0,
           right: 0,
           ...(this.state.position === CoachmarkPosition.TOP
-            ? { top: this.state.childStyle!.top + this.state.childStyle!.height }
+            ? { top: this.state.childStyle.top + this.state.childStyle.height }
             : {
-                bottom: Dimensions.get('window').height - this.state.childStyle!.top,
+                bottom: Dimensions.get('window').height - this.state.childStyle.top,
               }),
         }}
       >
         <CoachmarkView
-          x={this.state.childStyle!.left + this.state.childStyle!.width / 2}
+          x={this.state.childStyle.left + this.state.childStyle.width / 2}
           position={this.state.position}
           message={this.props.message!}
           renderArrow={this.props.renderArrow}
