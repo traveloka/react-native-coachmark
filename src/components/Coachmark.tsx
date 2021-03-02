@@ -78,7 +78,7 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
               width,
               height,
             },
-            position: pageY > Dimensions.get('window').height - (pageY + height) ? 'bottom' : 'top',
+            position: pageY > Dimensions.get('window').height - (pageY + height) ? CoachmarkPosition.BOTTOM : CoachmarkPosition.TOP,
           });
         }
         resolve(isInViewPort);
@@ -132,7 +132,7 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
           position: 'absolute',
           left: 0,
           right: 0,
-          ...(this.state.position === 'top'
+          ...(this.state.position === CoachmarkPosition.TOP
             ? { top: this.state.childStyle!.top + this.state.childStyle!.height }
             : {
                 bottom: Dimensions.get('window').height - this.state.childStyle!.top,

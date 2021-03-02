@@ -12,7 +12,10 @@ export interface CoachmarkProps {
   contentContainerStyle?: StyleProp<ViewStyle>
 }
 
-export type CoachmarkPosition = 'top' | 'bottom'
+export enum CoachmarkPosition {
+  TOP = 'top',
+  BOTTOM = 'bottom'
+}
 
 export interface CoachmarkArrowProps {
   position?: CoachmarkPosition,

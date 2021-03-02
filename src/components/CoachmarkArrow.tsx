@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ViewStyle } from 'react-native';
-import { CoachmarkArrowProps } from '../types';
-
-export const K_POSITION_TOP = 'top';
-export const K_POSITION_BOTTOM = 'bottom';
+import { CoachmarkArrowProps, CoachmarkPosition } from '../types';
 
 export default class CoachmarkArrow extends Component<CoachmarkArrowProps> {
   static defaultProps: Pick<CoachmarkArrowProps, 'position'> = {
-    position: K_POSITION_TOP,
+    position: CoachmarkPosition.TOP,
   };
 
   getStyles = (): ViewStyle => {
-    if(this.props.position == 'top') {
+    if(this.props.position == CoachmarkPosition.TOP) {
       return { borderBottomColor: '#FFF', borderBottomWidth: 10, marginTop: 12 };
     }
-    if(this.props.position == 'bottom') {
+    if(this.props.position == CoachmarkPosition.BOTTOM) {
       return { borderTopColor: '#FFF', borderTopWidth: 10, marginBottom: 12 };
     }
     return {};
