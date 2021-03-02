@@ -13,7 +13,7 @@ defaults:
   - &job-defaults
     working_directory: ~/workdir
     docker:
-      - image: circleci/node:8.11.2-jessie
+      - image: circleci/node:10-jessie
 
 version: 2
 jobs:
