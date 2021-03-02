@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, ScrollViewProps } from 'react-native';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 
 export interface StopableScrollViewProps {
-  onScroll?: (a: any) => void;
+  onScroll?: ScrollViewProps['onScroll'];
   scrollEventThrottle: number;
   scrollViewRef: React.RefObject<{
     scrollTo?: ScrollView['scrollTo']
@@ -24,7 +24,7 @@ C extends React.ComponentType<React.ComponentProps<C> & StopableScrollViewProps>
       (this.props.scrollViewRef || this.scrollView).current!.scrollTo!({ x: 0, y: this.yOffset, animated: false });
     };
 
-    _handleOnScroll = e => {
+    _handleOnScroll: ScrollViewProps['onScroll'] = e => {
       this.yOffset = e.nativeEvent.contentOffset.y;
       this.props.onScroll!(e);
     };
