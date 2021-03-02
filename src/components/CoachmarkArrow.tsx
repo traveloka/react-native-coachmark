@@ -5,7 +5,7 @@ import { CoachmarkPosition } from '../types';
 export const K_POSITION_TOP = 'top';
 export const K_POSITION_BOTTOM = 'bottom';
 
-interface Props {
+export interface Props {
   position?: CoachmarkPosition,
   x: number
 }
