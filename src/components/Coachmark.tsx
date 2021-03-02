@@ -16,11 +16,12 @@ interface CoachmarkState {
 }
 
 export default class Coachmark extends Component<CoachmarkProps, CoachmarkState> {
-  static defaultProps: Pick<CoachmarkProps, 'autoShow' | 'onHide' | 'onShow' | 'isAnchorReady'> = {
+  static defaultProps: CoachmarkProps = {
     autoShow: false,
     onHide: () => {}, // eslint-disable-line no-empty-function
     onShow: () => {}, // eslint-disable-line no-empty-function
     isAnchorReady: true,
+    message: ''
   };
 
   view = React.createRef<View>();
@@ -141,7 +142,7 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
         <CoachmarkView
           x={this.state.childStyle!.left + this.state.childStyle!.width / 2}
           position={this.state.position}
-          message={this.props.message}
+          message={this.props.message!}
           renderArrow={this.props.renderArrow}
         />
       </View>

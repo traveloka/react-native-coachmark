@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import { CoachmarkContentProps } from '../types';
 
-interface CoachmarkContentProps {
-  message: string;
-  buttonText?: string;
-}
 export default class CoachmarkContent extends Component<CoachmarkContentProps> {
   static defaultProps: Pick<CoachmarkContentProps, 'buttonText'> = {
     buttonText: 'OK'

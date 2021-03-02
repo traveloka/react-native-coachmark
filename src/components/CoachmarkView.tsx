@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import CoachmarkContent from './CoachmarkContent';
 import CoachmarkArrow from './CoachmarkArrow';
-import { CoachmarkPosition } from '../types';
-
-export type CoachmarkViewProps = {
-  renderArrow: ({ x, position }: { x: number, position?: CoachmarkPosition }) => React.ReactElement<CoachmarkArrow['props']>,
-} & CoachmarkContent['props'] & CoachmarkArrow['props'];
+import { CoachmarkViewProps } from '../types';
 
 export default class CoachmarkView extends Component<CoachmarkViewProps> {
   static defaultProps: Pick<CoachmarkViewProps, 'position' | 'renderArrow'> = {

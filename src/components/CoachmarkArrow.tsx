@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ViewStyle } from 'react-native';
-import { CoachmarkPosition } from '../types';
+import { CoachmarkArrowProps } from '../types';
 
 export const K_POSITION_TOP = 'top';
 export const K_POSITION_BOTTOM = 'bottom';
 
-export interface Props {
-  position?: CoachmarkPosition,
-  x: number
-}
-export default class CoachmarkArrow extends Component<Props> {
-  static defaultProps: Pick<Props, 'position'> = {
+export default class CoachmarkArrow extends Component<CoachmarkArrowProps> {
+  static defaultProps: Pick<CoachmarkArrowProps, 'position'> = {
     position: K_POSITION_TOP,
   };
 
