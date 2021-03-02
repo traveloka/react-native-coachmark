@@ -7,7 +7,7 @@
     "lint": "eslint --quiet",
     "prettier": "prettier --single-quote --trailing-comma es5 --print-width 120 --write",
     "precommit": "lint-staged",
-    "build": "tsc"
+    "prepare": "tsc"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
