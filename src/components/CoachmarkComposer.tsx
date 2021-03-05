@@ -1,9 +1,10 @@
 import React from 'react';
 import Coachmark from './Coachmark';
 
+type Coachmarks = Array<React.RefObject<Coachmark> | Coachmark>;
 export default class CoachmarkComposer {
-  coachmarks: Array<React.RefObject<Coachmark> | Coachmark>;
-  constructor(coachmarks) {
+  coachmarks: Coachmarks;
+  constructor(coachmarks: Coachmarks) {
     this.coachmarks = coachmarks;
   }
 
