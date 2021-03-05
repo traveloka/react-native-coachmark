@@ -1,5 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
+  "extends": ["@react-native-community"],
+  "plugins": ["import", "prettier", "@typescript-eslint"],
   "rules": {
     "radix": [2, "as-needed"],
     "no-nested-ternary": 1,
@@ -8,7 +10,6 @@
     "react/forbid-prop-types": 1,
     "import/no-unresolved": [2, { "ignore": ["^react$", "^react-native$", "^redux$", "^@storybook/"] }]
   },
-  "plugins": ["import"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -18,5 +19,11 @@
   },
   "globals": {
     "__DEV__": true
-  }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "ignorePatterns": "dist"
 }

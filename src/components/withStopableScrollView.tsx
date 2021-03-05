@@ -6,12 +6,12 @@ export interface StopableScrollViewProps {
   onScroll?: ScrollViewProps['onScroll'];
   scrollEventThrottle: number;
   scrollViewRef: React.RefObject<{
-    scrollTo?: ScrollView['scrollTo']
+    scrollTo?: ScrollView['scrollTo'];
   }>;
 }
-export default function<
-C extends React.ComponentType<React.ComponentProps<C> & StopableScrollViewProps>
->(WrappedComponent: C) {
+export default function <C extends React.ComponentType<React.ComponentProps<C> & StopableScrollViewProps>>(
+  WrappedComponent: C
+) {
   const StopableScroll = class extends React.Component<C & StopableScrollViewProps> {
     static defaultProps: Pick<StopableScrollViewProps, 'onScroll'> = {
       onScroll: () => {}, // eslint-disable-line no-empty-function
@@ -24,7 +24,7 @@ C extends React.ComponentType<React.ComponentProps<C> & StopableScrollViewProps>
       (this.props.scrollViewRef || this.scrollView).current!.scrollTo!({ x: 0, y: this.yOffset, animated: false });
     };
 
-    _handleOnScroll: ScrollViewProps['onScroll'] = e => {
+    _handleOnScroll: ScrollViewProps['onScroll'] = (e) => {
       this.yOffset = e.nativeEvent.contentOffset.y;
       this.props.onScroll!(e);
     };
@@ -32,7 +32,7 @@ C extends React.ComponentType<React.ComponentProps<C> & StopableScrollViewProps>
     render() {
       return (
         <WrappedComponent
-          {...this.props as any}
+          {...(this.props as any)}
           ref={this.props.scrollViewRef || this.scrollView}
           onScroll={this._handleOnScroll}
           scrollEventThrottle={16}

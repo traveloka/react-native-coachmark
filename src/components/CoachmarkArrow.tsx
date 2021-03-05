@@ -8,14 +8,14 @@ export default class CoachmarkArrow extends Component<CoachmarkArrowProps> {
   };
 
   getStyles = (): ViewStyle => {
-    if(this.props.position == CoachmarkPosition.TOP) {
+    if (this.props.position == CoachmarkPosition.TOP) {
       return { borderBottomColor: '#FFF', borderBottomWidth: 10, marginTop: 12 };
     }
-    if(this.props.position == CoachmarkPosition.BOTTOM) {
+    if (this.props.position == CoachmarkPosition.BOTTOM) {
       return { borderTopColor: '#FFF', borderTopWidth: 10, marginBottom: 12 };
     }
     return {};
-  }
+  };
 
   render() {
     return <View style={[styles.arrow, this.getStyles(), { marginLeft: this.props.x - 10 }]} />;

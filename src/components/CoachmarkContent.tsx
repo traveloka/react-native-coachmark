@@ -4,8 +4,8 @@ import { CoachmarkContentProps } from '../types';
 
 export default class CoachmarkContent extends Component<CoachmarkContentProps> {
   static defaultProps: Pick<CoachmarkContentProps, 'buttonText'> = {
-    buttonText: 'OK'
-  }
+    buttonText: 'OK',
+  };
   render() {
     return (
       <View style={styles.container}>

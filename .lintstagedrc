@@ -1,6 +1,6 @@
 {
-  "*.js": [
-    "prettier --single-quote --trailing-comma es5 --print-width 120 --write",
+  "src/**/*.{js,ts,tsx}": [
+    "eslint --fix",
     "git add"
   ]
 }

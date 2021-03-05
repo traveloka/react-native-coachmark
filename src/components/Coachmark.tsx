@@ -5,14 +5,14 @@ import CoachmarkView from './CoachmarkView';
 import { CoachmarkProps, CoachmarkPosition } from '../types';
 
 interface CoachmarkState {
-  visible: boolean,
+  visible: boolean;
   childStyle: {
-    top: number,
-    left: number,
-    width: number,
-    height: number,
-  },
-  position?: CoachmarkPosition
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+  };
+  position?: CoachmarkPosition;
 }
 
 export default class Coachmark extends Component<CoachmarkProps, CoachmarkState> {
@@ -21,7 +21,7 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
     onHide: () => {}, // eslint-disable-line no-empty-function
     onShow: () => {}, // eslint-disable-line no-empty-function
     isAnchorReady: true,
-    message: ''
+    message: '',
   };
 
   view = React.createRef<View>();
@@ -35,15 +35,15 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
         top: 0,
         left: 0,
         width: 0,
-        height: 0
+        height: 0,
       },
     };
   }
 
   show = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise<Promise<void>>((resolve) => {
       this.interval = setInterval(() => {
-        this._isInViewPort().then(isInViewPort => {
+        this._isInViewPort().then((isInViewPort) => {
           if (isInViewPort) {
             this._stopWatching();
             resolve(this._handleShow());
@@ -58,7 +58,7 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
   };
 
   _isInViewPort = () => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       if (!this.props.isAnchorReady || !this.view || !this.view.current) {
         return resolve(false);
       }
@@ -78,7 +78,10 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
               width,
               height,
             },
-            position: pageY > Dimensions.get('window').height - (pageY + height) ? CoachmarkPosition.BOTTOM : CoachmarkPosition.TOP,
+            position:
+              pageY > Dimensions.get('window').height - (pageY + height)
+                ? CoachmarkPosition.BOTTOM
+                : CoachmarkPosition.TOP,
           });
         }
         resolve(isInViewPort);
@@ -91,7 +94,7 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
     this.setState({
       visible: true,
     });
-    return new Promise<void>(resolve => {
+    return new Promise<void>((resolve) => {
       this.interval = setInterval(() => {
         if (!this.state.visible) {
           this._stopWatching();
@@ -118,7 +121,9 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
   };
 
   _measureLayout = () => {
-    if (this.props.autoShow) this.show();
+    if (this.props.autoShow) {
+      this.show();
+    }
   };
 
   _renderChildren = () => {
@@ -185,5 +190,5 @@ const styles = StyleSheet.create({
   },
   child: {
     position: 'absolute',
-  }
+  },
 });
