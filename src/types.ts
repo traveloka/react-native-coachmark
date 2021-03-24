@@ -5,7 +5,7 @@ export interface CoachmarkProps {
   message?: string;
   autoShow?: boolean;
   showArrow: boolean;
-  coachmarkContent?: (() => void) | null;
+  coachmarkContent: (() => React.Component) | null;
   onHide?: () => void;
   onShow?: () => void;
   isAnchorReady?: boolean;
@@ -28,11 +28,12 @@ export interface CoachmarkArrowProps {
 export interface CoachmarkContentProps {
   message: string;
   buttonText?: string;
-  coachmarkContent?: (() => void) | null;
+  coachmarkContent: (() => React.Component) | null;
 }
 
 export type CoachmarkViewProps = {
-  coachmarkContent: (() => void) | null;
+  showArrow?: boolean;
+  coachmarkContent?: (() => React.Component) | null;
   renderArrow: ({
     x,
     position,

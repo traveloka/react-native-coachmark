@@ -151,6 +151,8 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
           position={this.state.position}
           message={this.props.message!}
           renderArrow={this.props.renderArrow}
+          coachmarkContent={this.props.coachmarkContent}
+          showArrow={this.props.showArrow}
         />
       </View>
     );

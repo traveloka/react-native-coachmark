@@ -15,7 +15,10 @@ export default class CoachmarkView extends Component<CoachmarkViewProps> {
   }
 
   renderCoachmarkArrow() {
-    const { renderArrow, x, position } = this.props;
+    const { renderArrow, x, position, showArrow } = this.props;
+    if (!showArrow) {
+      return null;
+    }
     return renderArrow({ x, position });
   }
 
