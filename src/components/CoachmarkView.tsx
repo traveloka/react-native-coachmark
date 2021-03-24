@@ -4,13 +4,14 @@ import CoachmarkArrow from './CoachmarkArrow';
 import { CoachmarkPosition, CoachmarkViewProps } from '../types';
 
 export default class CoachmarkView extends Component<CoachmarkViewProps> {
-  static defaultProps: Pick<CoachmarkViewProps, 'position' | 'renderArrow'> = {
+  static defaultProps: Pick<CoachmarkViewProps, 'position' | 'coachmarkContent' | 'renderArrow'> = {
     position: CoachmarkPosition.TOP,
+    coachmarkContent: null,
     renderArrow: ({ x, position }) => <CoachmarkArrow x={x} position={position} />,
   };
 
   renderCoachmarkContent() {
-    return <CoachmarkContent message={this.props.message} />;
+    return <CoachmarkContent message={this.props.message} coachmarkContent={this.props.coachmarkContent} />;
   }
 
   renderCoachmarkArrow() {

@@ -3,10 +3,12 @@ import { Text, View, StyleSheet } from 'react-native';
 import { CoachmarkContentProps } from '../types';
 
 export default class CoachmarkContent extends Component<CoachmarkContentProps> {
-  static defaultProps: Pick<CoachmarkContentProps, 'buttonText'> = {
+  static defaultProps: Pick<CoachmarkContentProps, 'buttonText' | 'coachmarkContent'> = {
     buttonText: 'OK',
+    coachmarkContent: null,
   };
   render() {
+    if (this.props.coachmarkContent) return this.props.coachmarkContent();
     return (
       <View style={styles.container}>
         <View style={styles.message}>
