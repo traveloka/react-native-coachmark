@@ -4,6 +4,8 @@ import { StyleProp, ViewStyle } from 'react-native';
 export interface CoachmarkProps {
   message?: string;
   autoShow?: boolean;
+  showArrow: boolean;
+  coachmarkContent: (() => React.Component) | null;
   onHide?: () => void;
   onShow?: () => void;
   isAnchorReady?: boolean;
@@ -26,9 +28,12 @@ export interface CoachmarkArrowProps {
 export interface CoachmarkContentProps {
   message: string;
   buttonText?: string;
+  coachmarkContent: (() => React.Component) | null;
 }
 
 export type CoachmarkViewProps = {
+  showArrow?: boolean;
+  coachmarkContent?: (() => React.Component) | null;
   renderArrow: ({
     x,
     position,

@@ -18,6 +18,8 @@ interface CoachmarkState {
 export default class Coachmark extends Component<CoachmarkProps, CoachmarkState> {
   static defaultProps: CoachmarkProps = {
     autoShow: false,
+    showArrow: true,
+    coachmarkContent: null,
     onHide: () => {}, // eslint-disable-line no-empty-function
     onShow: () => {}, // eslint-disable-line no-empty-function
     isAnchorReady: true,
@@ -149,6 +151,8 @@ export default class Coachmark extends Component<CoachmarkProps, CoachmarkState>
           position={this.state.position}
           message={this.props.message!}
           renderArrow={this.props.renderArrow}
+          coachmarkContent={this.props.coachmarkContent}
+          showArrow={this.props.showArrow}
         />
       </View>
     );
